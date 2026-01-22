@@ -3,16 +3,21 @@
 This marketplace provides plugins for VC-backed startup CEOs. Install these plugins to access AI-powered tools for fundraising, board meeting preparation, and investor communication directly within Claude Code.
 
 **What's included:**
-- **Commands**: Structured workflows for pitch decks, board decks, and investor updates
-- **Agents**: Proactive assistants that trigger automatically when working on fundraising, board prep, or investor communication
-- **Skills**: Domain-specific knowledge for fundraising, board meetings, and investor relations
+- **Commands**: Structured workflows for metrics, pitch decks, board decks, and investor updates
+- **Agents**: Proactive assistants that trigger automatically when working on metrics, fundraising, board prep, or investor communication
+- **Skills**: Domain-specific knowledge for startup metrics, fundraising, board meetings, and investor relations
 
 ## The CEO Workflow
 
 ```
-Fundraising → Board Prep → Investor Updates
-     ↑                           |
-     └───── Next Round ←─────────┘
+              ┌─────────────┐
+              │   Metrics   │ ← Single source of truth
+              └──────┬──────┘
+         ┌──────────┼──────────┐
+         ▼          ▼          ▼
+   Fundraising  Board Prep  Investor Updates
+         │                         │
+         └───── Next Round ←───────┘
 ```
 
 ## Quick Start
@@ -22,6 +27,7 @@ Fundraising → Board Prep → Investor Updates
 /plugin marketplace add yamz8/open-ceo
 
 # Install plugins
+/plugin install metrics@open-ceo
 /plugin install fundraising@open-ceo
 /plugin install board-prep@open-ceo
 /plugin install investor-updates@open-ceo
@@ -30,6 +36,29 @@ Fundraising → Board Prep → Investor Updates
 After installation, configure your company context (see Configuration section below).
 
 ## Available Plugins
+
+### Metrics
+**Plugin ID**: `metrics@open-ceo`
+
+Track, calculate, and benchmark startup metrics. The data layer that powers all other plugins.
+
+**Commands:**
+| Command | Description |
+|---------|-------------|
+| `/metrics-setup [model] [stage]` | Configure metrics tracking |
+| `/metrics-snapshot [format]` | Generate metrics report |
+| `/metrics-benchmark [stage]` | Compare to industry benchmarks |
+| `/metrics-calculate [metric]` | Calculate derived metrics |
+
+**Features:**
+- SaaS metrics (ARR, MRR, NRR, churn, CAC, LTV, burn multiple, etc.)
+- Marketplace metrics (GMV, take rate, liquidity, network effects)
+- Stage-appropriate benchmarks (pre-seed to Series C)
+- Shared config that flows to other plugins
+
+**Requirements**: None - works with any project
+
+---
 
 ### Fundraising
 **Plugin ID**: `fundraising@open-ceo`
@@ -108,7 +137,8 @@ Monthly investor communication assistant. Draft professional investor updates op
 ### 2. Install specific plugins
 
 ```bash
-# Install all three for the complete CEO workflow
+# Install all four for the complete CEO workflow
+/plugin install metrics@open-ceo
 /plugin install fundraising@open-ceo
 /plugin install board-prep@open-ceo
 /plugin install investor-updates@open-ceo
@@ -117,6 +147,19 @@ Monthly investor communication assistant. Draft professional investor updates op
 ### 3. Configure company context (optional)
 
 Each plugin can use its own configuration file for personalized output:
+
+**For Metrics** (`.claude/metrics.local.md`) - shared across all plugins:
+```yaml
+---
+company_name: "YourCo"
+business_model: "saas"
+stage: "series-a"
+mrr: 185000
+nrr: 112
+gross_margin: 78
+burn_multiple: 1.8
+---
+```
 
 **For Fundraising** (`.claude/fundraising.local.md`):
 ```yaml
@@ -151,6 +194,15 @@ See each plugin's `examples/` folder for complete configuration templates.
 ### 4. Start using
 
 ```bash
+# Set up metrics tracking
+/metrics-setup saas series-a
+
+# Generate a metrics snapshot
+/metrics-snapshot
+
+# Benchmark your metrics
+/metrics-benchmark
+
 # Generate a pitch deck outline
 /pitch-deck sequoia seed
 
