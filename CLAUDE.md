@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Open CEO is a Claude Code plugin marketplace containing 4 specialized plugins for VC-backed startup CEOs. The plugins provide AI-powered tools for: metrics tracking, fundraising, board meeting preparation, and investor communication.
+Open CEO is a Claude Code plugin marketplace containing 5 specialized plugins for VC-backed startup CEOs. The plugins provide AI-powered tools for: metrics tracking, fundraising, board meeting preparation, investor communication, and hiring.
 
 **Architecture**: This is a markdown and JSON-based plugin system with no external dependencies. All business logic and knowledge lives in markdown files.
 
@@ -38,7 +38,7 @@ Metrics (.local.md) ← Fundraising, Board Prep, Investor Updates (read metrics 
 
 Each plugin checks for its own config first, then falls back to metrics config, then asks the user.
 
-## The Four Plugins
+## The Five Plugins
 
 | Plugin | Purpose | Commands |
 |--------|---------|----------|
@@ -46,6 +46,7 @@ Each plugin checks for its own config first, then falls back to metrics config, 
 | `fundraising@open-ceo` | Pitch decks, outreach, term sheets, pipeline | `/pitch-deck`, `/outreach`, `/term-sheet`, `/due-diligence`, `/pipeline` |
 | `board-prep@open-ceo` | Board meeting preparation workflow | `/board-prep:start`, `/board-prep:agenda`, `/board-prep:deck`, `/board-prep:qa-prep` |
 | `investor-updates@open-ceo` | Monthly investor update drafting | `/investor-updates:draft`, `/investor-updates:metrics`, `/investor-updates:send-checklist` |
+| `hiring@open-ceo` | Job descriptions, interviews, offers, equity | `/hiring-setup`, `/job-description`, `/interview-scorecard`, `/offer-letter`, `/equity-calculator` |
 
 ## Key Files
 

@@ -8,6 +8,34 @@
   },
   "plugins": [
     {
+      "name": "metrics",
+      "version": "0.1.0",
+      "description": "Startup metrics toolkit for CEOs. Track, calculate, and benchmark SaaS and marketplace metrics. Integrates with fundraising, board-prep, and investor-updates plugins.",
+      "source": "./metrics",
+      "author": {
+        "name": "yamz8"
+      },
+      "repository": "https://github.com/yamz8/open-ceo",
+      "homepage": "https://github.com/yamz8/open-ceo#metrics",
+      "license": "MIT",
+      "category": "productivity",
+      "tags": ["metrics", "saas", "marketplace", "kpi", "arr", "mrr", "churn", "startup", "analytics"]
+    },
+    {
+      "name": "fundraising",
+      "version": "0.1.0",
+      "description": "Fundraising toolkit for VC-backed startup CEOs. Create pitch decks, manage investor outreach, analyze term sheets, and track pipeline.",
+      "source": "./fundraising",
+      "author": {
+        "name": "yamz8"
+      },
+      "repository": "https://github.com/yamz8/open-ceo",
+      "homepage": "https://github.com/yamz8/open-ceo#fundraising",
+      "license": "MIT",
+      "category": "productivity",
+      "tags": ["fundraising", "pitch", "investors", "term-sheet", "startup", "ceo", "vc"]
+    },
+    {
       "name": "board-prep",
       "version": "0.1.0",
       "description": "Board meeting preparation toolkit for VC-backed startup CEOs. Helps create agendas, draft board decks, prepare metrics, and anticipate investor questions.",
@@ -34,6 +62,20 @@
       "license": "MIT",
       "category": "productivity",
       "tags": ["investor", "updates", "startup", "ceo", "email", "metrics", "communication"]
+    },
+    {
+      "name": "hiring",
+      "version": "0.1.0",
+      "description": "Startup hiring toolkit for CEOs. Generate job descriptions, interview scorecards, offer letters, and calculate equity compensation. Includes salary and equity benchmarks by role, level, and stage.",
+      "source": "./hiring",
+      "author": {
+        "name": "yamz8"
+      },
+      "repository": "https://github.com/yamz8/open-ceo",
+      "homepage": "https://github.com/yamz8/open-ceo#hiring",
+      "license": "MIT",
+      "category": "productivity",
+      "tags": ["hiring", "recruiting", "job-description", "offer-letter", "equity", "compensation", "interview", "startup", "hr"]
     }
   ]
 }

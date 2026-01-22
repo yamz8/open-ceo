@@ -1,0 +1,12 @@
+{
+  "name": "hiring",
+  "version": "0.1.0",
+  "description": "Startup hiring toolkit for CEOs. Generate job descriptions, interview scorecards, offer letters, and calculate equity compensation. Includes salary and equity benchmarks by role, level, and stage.",
+  "author": {
+    "name": "yamz8"
+  },
+  "repository": "https://github.com/yamz8/open-ceo",
+  "homepage": "https://github.com/yamz8/open-ceo#hiring",
+  "license": "MIT",
+  "keywords": ["hiring", "recruiting", "job-description", "offer-letter", "equity", "compensation", "interview", "startup", "hr"]
+}
