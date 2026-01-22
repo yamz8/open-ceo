@@ -9,15 +9,16 @@ This marketplace provides plugins for VC-backed startup CEOs. Install these plug
 
 ## The CEO Workflow
 
+**Each plugin works standalone** - install only what you need. When used together, they can optionally share configuration:
+
 ```
-              ┌─────────────┐
-              │   Metrics   │ ← Single source of truth
-              └──────┬──────┘
-         ┌──────────┼──────────┐
-         ▼          ▼          ▼
-   Fundraising  Board Prep  Investor Updates
-         │                         │
-         └───── Next Round ←───────┘
+   ┌─────────────┐  ┌────────────┐  ┌──────────────────┐  ┌──────────────────┐
+   │   Metrics   │  │ Fundraising │  │   Board Prep    │  │ Investor Updates │
+   │ (standalone)│  │ (standalone)│  │   (standalone)  │  │   (standalone)   │
+   └──────┬──────┘  └──────┬──────┘  └────────┬────────┘  └────────┬─────────┘
+          │                │                   │                    │
+          └────────────────┴───────────────────┴────────────────────┘
+                              Optional: Share config to avoid re-entering data
 ```
 
 ## Quick Start
@@ -26,21 +27,21 @@ This marketplace provides plugins for VC-backed startup CEOs. Install these plug
 # Add the marketplace
 /plugin marketplace add yamz8/open-ceo
 
-# Install plugins
+# Install only what you need (each plugin works standalone)
 /plugin install metrics@open-ceo
 /plugin install fundraising@open-ceo
 /plugin install board-prep@open-ceo
 /plugin install investor-updates@open-ceo
 ```
 
-After installation, configure your company context (see Configuration section below).
+**No configuration required** - each plugin will ask for information when needed. Optional config files can save time if you use plugins frequently.
 
 ## Available Plugins
 
 ### Metrics
 **Plugin ID**: `metrics@open-ceo`
 
-Track, calculate, and benchmark startup metrics. The data layer that powers all other plugins.
+Track, calculate, and benchmark startup metrics. Works standalone or as optional shared config for other plugins.
 
 **Commands:**
 | Command | Description |
@@ -54,9 +55,9 @@ Track, calculate, and benchmark startup metrics. The data layer that powers all 
 - SaaS metrics (ARR, MRR, NRR, churn, CAC, LTV, burn multiple, etc.)
 - Marketplace metrics (GMV, take rate, liquidity, network effects)
 - Stage-appropriate benchmarks (pre-seed to Series C)
-- Shared config that flows to other plugins
+- Optional: Other plugins can read your metrics config
 
-**Requirements**: None - works with any project
+**Requirements**: None - works standalone with any project
 
 ---
 
@@ -137,18 +138,20 @@ Monthly investor communication assistant. Draft professional investor updates op
 ### 2. Install specific plugins
 
 ```bash
-# Install all four for the complete CEO workflow
-/plugin install metrics@open-ceo
-/plugin install fundraising@open-ceo
-/plugin install board-prep@open-ceo
-/plugin install investor-updates@open-ceo
+# Install only what you need - each works standalone
+/plugin install metrics@open-ceo         # Metrics tracking
+/plugin install fundraising@open-ceo     # Fundraising toolkit
+/plugin install board-prep@open-ceo      # Board meeting prep
+/plugin install investor-updates@open-ceo # Monthly updates
 ```
 
 ### 3. Configure company context (optional)
 
-Each plugin can use its own configuration file for personalized output:
+**Configuration is optional** - each plugin will ask for information when needed.
 
-**For Metrics** (`.claude/metrics.local.md`) - shared across all plugins:
+For convenience, you can create config files to avoid re-entering information:
+
+**For Metrics** (`.claude/metrics.local.md`):
 ```yaml
 ---
 company_name: "YourCo"
@@ -174,22 +177,31 @@ target_valuation: 15000000
 ---
 ```
 
-**For Board Prep & Investor Updates** (`.claude/board-prep.local.md`):
+**For Board Prep** (`.claude/board-prep.local.md`):
 ```yaml
 ---
 company_name: "YourCo"
 stage: "Series A"
-industry: "B2B SaaS"
-metrics:
-  arr: "$2.4M"
-  mrr: "$200K"
-  mrr_growth: "8%"
-  burn_rate: "$150K/month"
-  runway: "18 months"
+board_members:
+  - name: "Jane Smith"
+    firm: "Acme Ventures"
 ---
 ```
 
-See each plugin's `examples/` folder for complete configuration templates.
+**For Investor Updates** (`.claude/investor-updates.local.md`):
+```yaml
+---
+company_name: "YourCo"
+stage: "Series A"
+investors:
+  - name: "Jane Smith"
+    firm: "Acme Ventures"
+---
+```
+
+See each plugin's `examples/` folder for complete templates.
+
+**Note**: If you have multiple plugins, they can optionally read each other's configs - you don't need to duplicate information. Each plugin checks for configs in a fallback order.
 
 ### 4. Start using
 

@@ -171,12 +171,17 @@ Target 300-500 words for the main body. Investors should be able to read it in 2
 - Keep paragraphs short (2-3 sentences)
 - Use consistent structure month to month
 
-## Configuration
+## Configuration (Optional)
 
-This plugin shares configuration with board-prep. See `.claude/board-prep.local.md` for company context including:
-- Board member and investor list
-- Key metrics to track
-- Company background
+This plugin works standalone without any configuration. When config is needed, check in this order:
+- `.claude/investor-updates.local.md` (plugin's own config)
+- `.claude/metrics.local.md` (if using metrics plugin)
+- `.claude/board-prep.local.md` (if using board-prep plugin)
+
+If no config exists, ask the user for:
+- Company name and stage
+- Current metrics (ARR/MRR, growth, runway)
+- Investor/board member list (for recipient suggestions)
 
 ## Additional Resources
 
