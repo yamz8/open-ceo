@@ -6,5 +6,19 @@
   "metadata": {
     "description": "Open CEO plugin marketplace"
   },
-  "plugins": []
+  "plugins": [
+    {
+      "name": "board-prep",
+      "version": "0.1.0",
+      "description": "Board meeting preparation toolkit for VC-backed startup CEOs. Helps create agendas, draft board decks, prepare metrics, and anticipate investor questions.",
+      "path": "./board-prep",
+      "author": "yamz8",
+      "tags": ["board", "startup", "ceo", "investor", "saas", "metrics"],
+      "components": {
+        "skills": 1,
+        "commands": 4,
+        "agents": 1
+      }
+    }
+  ]
 }
