@@ -1,0 +1,12 @@
+{
+  "name": "metrics",
+  "version": "0.1.0",
+  "description": "Startup metrics toolkit for CEOs. Track, calculate, and benchmark SaaS and marketplace metrics. Integrates with fundraising, board-prep, and investor-updates plugins.",
+  "author": {
+    "name": "yamz8"
+  },
+  "repository": "https://github.com/yamz8/open-ceo",
+  "homepage": "https://github.com/yamz8/open-ceo#metrics",
+  "license": "MIT",
+  "keywords": ["metrics", "saas", "marketplace", "kpi", "arr", "mrr", "churn", "startup", "analytics"]
+}
