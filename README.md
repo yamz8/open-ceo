@@ -12,13 +12,12 @@ This marketplace provides plugins for VC-backed startup CEOs. Install these plug
 **Each plugin works standalone** - install only what you need. When used together, they can optionally share configuration:
 
 ```
-   ┌─────────────┐  ┌────────────┐  ┌──────────────────┐  ┌──────────────────┐
-   │   Metrics   │  │ Fundraising │  │   Board Prep    │  │ Investor Updates │
-   │ (standalone)│  │ (standalone)│  │   (standalone)  │  │   (standalone)   │
-   └──────┬──────┘  └──────┬──────┘  └────────┬────────┘  └────────┬─────────┘
-          │                │                   │                    │
-          └────────────────┴───────────────────┴────────────────────┘
-                              Optional: Share config to avoid re-entering data
+┌───────────┐  ┌─────────────┐  ┌────────────┐  ┌──────────────────┐
+│  Metrics  │  │ Fundraising │  │ Board Prep │  │ Investor Updates │
+└─────┬─────┘  └──────┬──────┘  └──────┬─────┘  └────────┬─────────┘
+      │               │                │                  │
+      └───────────────┴────────────────┴──────────────────┘
+                  Optional: share config to avoid re-entering data
 ```
 
 ## Quick Start
