@@ -16,6 +16,16 @@
         "name": "yamz8"
       },
       "tags": ["board", "startup", "ceo", "investor", "saas", "metrics", "deck"]
+    },
+    {
+      "name": "investor-updates",
+      "version": "0.1.0",
+      "description": "Monthly investor update toolkit for VC-backed startup CEOs. Helps draft professional investor emails, generate metrics snapshots, and follow communication best practices.",
+      "source": "./investor-updates",
+      "author": {
+        "name": "yamz8"
+      },
+      "tags": ["investor", "updates", "startup", "ceo", "email", "metrics", "communication"]
     }
   ]
 }

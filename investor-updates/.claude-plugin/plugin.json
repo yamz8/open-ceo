@@ -1,0 +1,9 @@
+{
+  "name": "investor-updates",
+  "version": "0.1.0",
+  "description": "Monthly investor update toolkit for VC-backed startup CEOs. Helps draft professional investor emails, generate metrics snapshots, and follow communication best practices.",
+  "author": {
+    "name": "yamz8"
+  },
+  "keywords": ["investor", "updates", "startup", "ceo", "email", "metrics", "communication"]
+}
