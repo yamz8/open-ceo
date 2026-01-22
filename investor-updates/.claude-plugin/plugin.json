@@ -5,5 +5,8 @@
   "author": {
     "name": "yamz8"
   },
+  "repository": "https://github.com/yamz8/open-ceo",
+  "homepage": "https://github.com/yamz8/open-ceo#investor-updates",
+  "license": "MIT",
   "keywords": ["investor", "updates", "startup", "ceo", "email", "metrics", "communication"]
 }
