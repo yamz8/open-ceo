@@ -12,12 +12,12 @@ This marketplace provides plugins for VC-backed startup CEOs. Install these plug
 **Each plugin works standalone** - install only what you need. When used together, they can optionally share configuration:
 
 ```
-┌─────────┐  ┌─────────────┐  ┌────────────┐  ┌──────────────────┐
-│ Metrics │  │ Fundraising │  │ Board Prep │  │ Investor Updates │
-└────┬────┘  └──────┬──────┘  └─────┬──────┘  └────────┬─────────┘
-     │              │               │                  │
-     └──────────────┴───────────────┴──────────────────┘
-                 Optional: share config to avoid re-entering data
+┌─────────┐  ┌─────────────┐  ┌────────────┐  ┌──────────────────┐  ┌────────┐
+│ Metrics │  │ Fundraising │  │ Board Prep │  │ Investor Updates │  │ Hiring │
+└────┬────┘  └──────┬──────┘  └─────┬──────┘  └────────┬─────────┘  └───┬────┘
+     │              │               │                  │                │
+     └──────────────┴───────────────┴──────────────────┴────────────────┘
+                      Optional: share config to avoid re-entering data
 ```
 
 ## Quick Start
@@ -31,6 +31,7 @@ This marketplace provides plugins for VC-backed startup CEOs. Install these plug
 /plugin install fundraising@open-ceo
 /plugin install board-prep@open-ceo
 /plugin install investor-updates@open-ceo
+/plugin install hiring@open-ceo
 ```
 
 **No configuration required** - each plugin will ask for information when needed. Optional config files can save time if you use plugins frequently.
@@ -126,6 +127,31 @@ Monthly investor communication assistant. Draft professional investor updates op
 
 **Requirements**: None - works with any project
 
+---
+
+### Hiring
+**Plugin ID**: `hiring@open-ceo`
+
+Startup hiring toolkit for CEOs. Generate job descriptions, interview scorecards, offer letters, and calculate equity compensation with benchmarks by role, level, and stage.
+
+**Commands:**
+| Command | Description |
+|---------|-------------|
+| `/hiring-setup` | Configure company hiring preferences and equity structure |
+| `/job-description [role] [level]` | Generate role-specific job descriptions |
+| `/interview-scorecard [role] [stage]` | Create structured interview evaluations |
+| `/offer-letter [role] [candidate]` | Draft professional offer letters |
+| `/equity-calculator [role] [level]` | Calculate equity grants and value projections |
+
+**Features:**
+- Job descriptions for any role (Engineering, Product, Sales, Marketing, etc.)
+- Interview scorecards with competency-based evaluation
+- Offer letters with salary and equity details
+- Equity calculator with vesting schedules and exit scenarios
+- Compensation benchmarks by stage, level, and location tier
+
+**Requirements**: None - works with any project
+
 ## Detailed Installation
 
 ### 1. Add the marketplace (one time)
@@ -142,6 +168,7 @@ Monthly investor communication assistant. Draft professional investor updates op
 /plugin install fundraising@open-ceo     # Fundraising toolkit
 /plugin install board-prep@open-ceo      # Board meeting prep
 /plugin install investor-updates@open-ceo # Monthly updates
+/plugin install hiring@open-ceo          # Hiring toolkit
 ```
 
 ### 3. Configure company context (optional)
@@ -198,6 +225,19 @@ investors:
 ---
 ```
 
+**For Hiring** (`.claude/hiring.local.md`):
+```yaml
+---
+company_name: "YourCo"
+stage: "series-a"
+total_equity_pool_percent: 15
+standard_vesting_years: 4
+cliff_months: 12
+fmv_per_share: 0.50
+salary_percentile_target: 50
+---
+```
+
 See each plugin's `examples/` folder for complete templates.
 
 **Note**: If you have multiple plugins, they can optionally read each other's configs - you don't need to duplicate information. Each plugin checks for configs in a fallback order.
@@ -228,6 +268,15 @@ See each plugin's `examples/` folder for complete templates.
 
 # Draft a monthly investor update
 /investor-updates:draft
+
+# Generate a job description
+/job-description senior software engineer
+
+# Create interview scorecard
+/interview-scorecard product-manager technical
+
+# Calculate equity for an offer
+/equity-calculator senior series-a
 ```
 
 ## Support
