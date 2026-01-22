@@ -1,0 +1,12 @@
+{
+  "name": "crisis-playbook",
+  "version": "0.1.0",
+  "description": "Crisis management toolkit for startup CEOs. Navigate layoffs, pivots, down rounds, PR crises, and other existential challenges with frameworks, communication templates, and step-by-step guidance.",
+  "author": {
+    "name": "yamz8"
+  },
+  "repository": "https://github.com/yamz8/open-ceo",
+  "homepage": "https://github.com/yamz8/open-ceo#crisis-playbook",
+  "license": "MIT",
+  "keywords": ["crisis", "layoff", "pivot", "down-round", "pr", "communication", "restructuring", "startup", "ceo", "turnaround"]
+}
