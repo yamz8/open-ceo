@@ -1,11 +1,19 @@
 # Startup CEO Marketplace for Claude Code
 
-This marketplace provides plugins for VC-backed startup CEOs. Install these plugins to access AI-powered tools for board meeting preparation and investor communication directly within Claude Code.
+This marketplace provides plugins for VC-backed startup CEOs. Install these plugins to access AI-powered tools for fundraising, board meeting preparation, and investor communication directly within Claude Code.
 
 **What's included:**
-- **Commands**: Structured workflows for creating board decks, agendas, and investor updates
-- **Agents**: Proactive assistants that trigger automatically when working on board prep or investor communication
-- **Skills**: Domain-specific knowledge for startup board meetings and investor relations
+- **Commands**: Structured workflows for pitch decks, board decks, and investor updates
+- **Agents**: Proactive assistants that trigger automatically when working on fundraising, board prep, or investor communication
+- **Skills**: Domain-specific knowledge for fundraising, board meetings, and investor relations
+
+## The CEO Workflow
+
+```
+Fundraising → Board Prep → Investor Updates
+     ↑                           |
+     └───── Next Round ←─────────┘
+```
 
 ## Quick Start
 
@@ -14,6 +22,7 @@ This marketplace provides plugins for VC-backed startup CEOs. Install these plug
 /plugin marketplace add yamz8/open-ceo
 
 # Install plugins
+/plugin install fundraising@open-ceo
 /plugin install board-prep@open-ceo
 /plugin install investor-updates@open-ceo
 ```
@@ -21,6 +30,31 @@ This marketplace provides plugins for VC-backed startup CEOs. Install these plug
 After installation, configure your company context (see Configuration section below).
 
 ## Available Plugins
+
+### Fundraising
+**Plugin ID**: `fundraising@open-ceo`
+
+Complete fundraising toolkit for VC-backed startup CEOs. Create pitch decks, write investor outreach, analyze term sheets, and manage your fundraising pipeline.
+
+**Commands:**
+| Command | Description |
+|---------|-------------|
+| `/pitch-deck [format] [stage]` | Generate pitch deck outline (Sequoia, YC, a16z formats) |
+| `/outreach [type] [investor]` | Create investor emails (cold, warm, follow-up) |
+| `/term-sheet [action]` | Analyze or compare term sheets |
+| `/due-diligence [stage]` | Generate DD checklist by stage |
+| `/pipeline [action]` | Track investor pipeline |
+
+**Features:**
+- Pitch deck templates for Sequoia, YC, and a16z formats
+- Cold/warm outreach email sequences
+- Term sheet analysis with red flag detection
+- Stage-specific due diligence checklists (pre-seed to Series C)
+- Light investor pipeline CRM
+
+**Requirements**: None - works with any project
+
+---
 
 ### Board Prep
 **Plugin ID**: `board-prep@open-ceo`
@@ -74,42 +108,58 @@ Monthly investor communication assistant. Draft professional investor updates op
 ### 2. Install specific plugins
 
 ```bash
+# Install all three for the complete CEO workflow
+/plugin install fundraising@open-ceo
 /plugin install board-prep@open-ceo
 /plugin install investor-updates@open-ceo
 ```
 
-### 3. Configure company context
+### 3. Configure company context (optional)
 
-Create a `.claude/board-prep.local.md` file in your project with your company details:
+Each plugin can use its own configuration file for personalized output:
 
+**For Fundraising** (`.claude/fundraising.local.md`):
+```yaml
+---
+company_name: "YourCo"
+one_liner: "AI-powered analytics for SMBs"
+stage: "seed"
+arr: 500000
+mrr_growth: 15
+raise_amount: 3000000
+target_valuation: 15000000
+---
+```
+
+**For Board Prep & Investor Updates** (`.claude/board-prep.local.md`):
 ```yaml
 ---
 company_name: "YourCo"
 stage: "Series A"
 industry: "B2B SaaS"
-fiscal_year_end: "December"
-board_members:
-  - name: "Investor Name"
-    firm: "VC Firm"
-    role: "Board Member"
 metrics:
   arr: "$2.4M"
   mrr: "$200K"
   mrr_growth: "8%"
-  net_revenue_retention: "115%"
-  gross_margin: "78%"
   burn_rate: "$150K/month"
   runway: "18 months"
 ---
-
-Additional context about your company, recent milestones, or strategic priorities.
 ```
 
-Both plugins share this configuration for consistent context across board prep and investor updates.
+See each plugin's `examples/` folder for complete configuration templates.
 
 ### 4. Start using
 
 ```bash
+# Generate a pitch deck outline
+/pitch-deck sequoia seed
+
+# Create investor outreach email
+/outreach cold
+
+# Analyze a term sheet
+/term-sheet analyze
+
 # Start a full board prep workflow
 /board-prep:start
 

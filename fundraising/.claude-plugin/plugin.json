@@ -1,0 +1,12 @@
+{
+  "name": "fundraising",
+  "version": "0.1.0",
+  "description": "Fundraising toolkit for VC-backed startup CEOs. Helps create pitch decks, write investor outreach emails, analyze term sheets, prepare for due diligence, and track investor pipeline.",
+  "author": {
+    "name": "yamz8"
+  },
+  "repository": "https://github.com/yamz8/open-ceo",
+  "homepage": "https://github.com/yamz8/open-ceo#fundraising",
+  "license": "MIT",
+  "keywords": ["fundraising", "startup", "ceo", "investor", "pitch-deck", "term-sheet", "vc", "seed", "series-a"]
+}
