@@ -12,7 +12,9 @@
       "version": "0.1.0",
       "description": "Board meeting preparation toolkit for VC-backed startup CEOs. Helps create agendas, draft board decks, prepare metrics, and anticipate investor questions.",
       "source": "./board-prep",
-      "author": "yamz8",
+      "author": {
+        "name": "yamz8"
+      },
       "tags": ["board", "startup", "ceo", "investor", "saas", "metrics"]
     }
   ]
