@@ -76,6 +76,34 @@
       "license": "MIT",
       "category": "productivity",
       "tags": ["hiring", "recruiting", "job-description", "offer-letter", "equity", "compensation", "interview", "startup", "hr"]
+    },
+    {
+      "name": "founder-mode",
+      "version": "0.1.0",
+      "description": "Founder productivity and wellness toolkit. Prioritize chaos, delegate effectively, manage energy, and maintain mental resilience. Includes decision journaling, stakeholder mapping, and weekly reset rituals.",
+      "source": "./founder-mode",
+      "author": {
+        "name": "yamz8"
+      },
+      "repository": "https://github.com/yamz8/open-ceo",
+      "homepage": "https://github.com/yamz8/open-ceo#founder-mode",
+      "license": "MIT",
+      "category": "productivity",
+      "tags": ["founder", "ceo", "productivity", "prioritization", "delegation", "wellness", "burnout", "decision-making", "startup", "mental-health"]
+    },
+    {
+      "name": "crisis-playbook",
+      "version": "0.1.0",
+      "description": "Crisis management toolkit for startup CEOs. Navigate layoffs, pivots, down rounds, PR crises, and existential threats with frameworks, communication templates, and step-by-step guidance.",
+      "source": "./crisis-playbook",
+      "author": {
+        "name": "yamz8"
+      },
+      "repository": "https://github.com/yamz8/open-ceo",
+      "homepage": "https://github.com/yamz8/open-ceo#crisis-playbook",
+      "license": "MIT",
+      "category": "productivity",
+      "tags": ["crisis", "layoff", "pivot", "down-round", "pr", "communication", "restructuring", "turnaround", "startup", "ceo"]
     }
   ]
 }

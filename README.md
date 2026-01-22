@@ -3,21 +3,21 @@
 This marketplace provides plugins for VC-backed startup CEOs. Install these plugins to access AI-powered tools for fundraising, board meeting preparation, and investor communication directly within Claude Code.
 
 **What's included:**
-- **Commands**: Structured workflows for metrics, pitch decks, board decks, and investor updates
-- **Agents**: Proactive assistants that trigger automatically when working on metrics, fundraising, board prep, or investor communication
-- **Skills**: Domain-specific knowledge for startup metrics, fundraising, board meetings, and investor relations
+- **Commands**: Structured workflows for metrics, pitch decks, board decks, investor updates, hiring, founder productivity, and crisis management
+- **Agents**: Proactive assistants that trigger automatically when working on metrics, fundraising, board prep, investor communication, hiring, founder challenges, or company crises
+- **Skills**: Domain-specific knowledge for startup metrics, fundraising, board meetings, investor relations, compensation, founder wellness, and crisis communication
 
 ## The CEO Workflow
 
 **Each plugin works standalone** - install only what you need. When used together, they can optionally share configuration:
 
 ```
-┌─────────┐  ┌─────────────┐  ┌────────────┐  ┌──────────────────┐  ┌────────┐
-│ Metrics │  │ Fundraising │  │ Board Prep │  │ Investor Updates │  │ Hiring │
-└────┬────┘  └──────┬──────┘  └─────┬──────┘  └────────┬─────────┘  └───┬────┘
-     │              │               │                  │                │
-     └──────────────┴───────────────┴──────────────────┴────────────────┘
-                      Optional: share config to avoid re-entering data
+┌─────────┐  ┌─────────────┐  ┌────────────┐  ┌──────────────────┐  ┌────────┐  ┌──────────────┐  ┌──────────────────┐
+│ Metrics │  │ Fundraising │  │ Board Prep │  │ Investor Updates │  │ Hiring │  │ Founder Mode │  │ Crisis Playbook  │
+└────┬────┘  └──────┬──────┘  └─────┬──────┘  └────────┬─────────┘  └───┬────┘  └──────┬───────┘  └────────┬─────────┘
+     │              │               │                  │                │              │                   │
+     └──────────────┴───────────────┴──────────────────┴────────────────┴──────────────┴───────────────────┘
+                                 Optional: share config to avoid re-entering data
 ```
 
 ## Quick Start
@@ -32,6 +32,8 @@ This marketplace provides plugins for VC-backed startup CEOs. Install these plug
 /plugin install board-prep@open-ceo
 /plugin install investor-updates@open-ceo
 /plugin install hiring@open-ceo
+/plugin install founder-mode@open-ceo
+/plugin install crisis-playbook@open-ceo
 ```
 
 **No configuration required** - each plugin will ask for information when needed. Optional config files can save time if you use plugins frequently.
@@ -129,6 +131,62 @@ Monthly investor communication assistant. Draft professional investor updates op
 
 ---
 
+### Founder Mode
+**Plugin ID**: `founder-mode@open-ceo`
+
+Productivity and wellness toolkit for the chaotic reality of being a startup CEO. Part executive coach, part therapist, part tough-love advisor.
+
+**Commands:**
+| Command | Description |
+|---------|-------------|
+| `/founder-setup` | Configure founder profile and preferences |
+| `/prioritize-chaos` | Triage overwhelming to-do lists |
+| `/energy-audit` | Assess where energy goes vs. should go |
+| `/delegate-or-die` | Framework for effective delegation |
+| `/founder-therapy` | Structured reflection for hard moments |
+| `/weekly-reset` | End-of-week reflection + planning ritual |
+| `/decision-journal` | Log and review major decisions |
+| `/stakeholder-map` | Map relationships and who needs attention |
+
+**Features:**
+- Prioritization frameworks adapted for founders
+- Delegation ladder and letting-go strategies
+- Energy management and sustainable pace
+- Decision journaling with review
+- Burnout prevention and wellness support
+- Stakeholder relationship mapping
+
+**Requirements**: None - works with any project
+
+---
+
+### Crisis Playbook
+**Plugin ID**: `crisis-playbook@open-ceo`
+
+Crisis management toolkit for navigating the hardest moments. Layoffs, pivots, down rounds, PR crises, and existential threats with frameworks, communication templates, and step-by-step guidance.
+
+**Commands:**
+| Command | Description |
+|---------|-------------|
+| `/crisis-assess` | Assess crisis severity and determine response |
+| `/layoff-plan` | Plan and execute a reduction in force |
+| `/pivot-decision` | Framework for deciding whether and how to pivot |
+| `/down-round-prep` | Navigate raising at a lower valuation |
+| `/pr-response` | Respond to PR crises and reputation threats |
+
+**Features:**
+- Crisis severity assessment and triage
+- Complete layoff planning with legal considerations
+- Pivot vs. persevere decision frameworks
+- Down round negotiation and communication
+- PR response templates and strategies
+- Restructuring and turnaround playbooks
+- Stakeholder communication templates
+
+**Requirements**: None - works with any project
+
+---
+
 ### Hiring
 **Plugin ID**: `hiring@open-ceo`
 
@@ -169,6 +227,8 @@ Startup hiring toolkit for CEOs. Generate job descriptions, interview scorecards
 /plugin install board-prep@open-ceo      # Board meeting prep
 /plugin install investor-updates@open-ceo # Monthly updates
 /plugin install hiring@open-ceo          # Hiring toolkit
+/plugin install founder-mode@open-ceo    # Founder productivity
+/plugin install crisis-playbook@open-ceo # Crisis management
 ```
 
 ### 3. Configure company context (optional)
@@ -277,6 +337,24 @@ See each plugin's `examples/` folder for complete templates.
 
 # Calculate equity for an offer
 /equity-calculator senior series-a
+
+# Prioritize when overwhelmed
+/prioritize-chaos
+
+# Weekly reflection and planning
+/weekly-reset
+
+# Log a major decision
+/decision-journal
+
+# Assess a crisis situation
+/crisis-assess
+
+# Plan a layoff
+/layoff-plan
+
+# Evaluate a pivot
+/pivot-decision
 ```
 
 ## Support
