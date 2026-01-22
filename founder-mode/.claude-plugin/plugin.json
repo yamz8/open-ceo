@@ -1,0 +1,12 @@
+{
+  "name": "founder-mode",
+  "version": "0.1.0",
+  "description": "Founder productivity and wellness toolkit. Prioritize chaos, delegate effectively, manage energy, and maintain mental resilience. Includes decision journaling, stakeholder mapping, and weekly reset rituals for startup CEOs.",
+  "author": {
+    "name": "yamz8"
+  },
+  "repository": "https://github.com/yamz8/open-ceo",
+  "homepage": "https://github.com/yamz8/open-ceo#founder-mode",
+  "license": "MIT",
+  "keywords": ["founder", "ceo", "productivity", "prioritization", "delegation", "wellness", "burnout", "decision-making", "startup", "mental-health"]
+}
