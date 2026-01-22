@@ -117,11 +117,15 @@ Avoid overwhelming with full SaaS metrics dashboard.
 
 **Context Gathering:**
 
-1. Check for company configuration at `.claude/board-prep.local.md`
-2. Ask about the specific month being covered
-3. Gather key highlights and metrics
-4. Understand any challenges to address
-5. Identify specific asks for investors
+1. Check for company configuration (use first one found):
+   - `.claude/investor-updates.local.md` (plugin's own config)
+   - `.claude/metrics.local.md` (if using metrics plugin)
+   - `.claude/board-prep.local.md` (if using board-prep plugin)
+2. If no config exists, ask for company details (works fine standalone)
+3. Ask about the specific month being covered
+4. Gather key highlights and metrics
+5. Understand any challenges to address
+6. Identify specific asks for investors
 
 **Output Format:**
 

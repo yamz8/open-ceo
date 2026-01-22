@@ -17,25 +17,28 @@ A Claude Code plugin to help VC-backed startup CEOs send professional monthly in
 | `/investor-updates:metrics` | Generate a metrics snapshot for the update |
 | `/investor-updates:send-checklist` | Pre-send checklist before sending |
 
-## Configuration
+## Configuration (Optional)
 
-This plugin shares configuration with the board-prep plugin. Create or update `.claude/board-prep.local.md` in your project:
+Create `.claude/investor-updates.local.md` in your project for personalized updates:
 
-```markdown
+```yaml
 ---
-company_name: Your Company
-stage: Series A
-board_members:
-  - name: Jane Smith
-    role: Lead Investor
-    firm: Acme Ventures
-    email: jane@acmeventures.com
+company_name: "Your Company"
+stage: "Series A"
+investors:
+  - name: "Jane Smith"
+    firm: "Acme Ventures"
+    email: "jane@acmeventures.com"
+metrics:
+  arr: "$2.4M"
+  mrr_growth: "8%"
+  runway: "18 months"
 ---
-
-## Key Metrics Sources
-- Revenue data: spreadsheet.csv
-- User metrics: analytics dashboard
 ```
+
+**No configuration?** No problem - the plugin will ask for details when needed.
+
+**Using other Open CEO plugins?** This plugin can also read from `.claude/board-prep.local.md` or `.claude/metrics.local.md` if they exist, so you don't need to duplicate information.
 
 ## Metrics Tracked
 

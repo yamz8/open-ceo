@@ -82,23 +82,26 @@ burn_multiple: 1.8
 
 See `examples/metrics.local.example.md` for complete templates.
 
-## Integration with Other Plugins
+## Integration with Other Plugins (Optional)
 
-This plugin's config (`.claude/metrics.local.md`) is designed to be read by other Open CEO plugins:
+This plugin works **completely standalone**. However, if you're using other Open CEO plugins, they can optionally read from `.claude/metrics.local.md` to avoid re-entering the same data:
 
 ```
               ┌─────────────┐
-              │   Metrics   │ ← Single source of truth
+              │   Metrics   │ ← Optional shared config
               └──────┬──────┘
          ┌──────────┼──────────┐
          ▼          ▼          ▼
    Fundraising  Board Prep  Investor Updates
+   (standalone)  (standalone)  (standalone)
 ```
 
-When you update metrics here, they flow automatically to:
-- **Fundraising**: Pitch deck metrics sections
-- **Board Prep**: Board deck KPI slides
-- **Investor Updates**: Monthly metrics snapshots
+**Each plugin works independently** - the integration just saves you from entering the same metrics twice.
+
+Other plugins check for configs in this order:
+1. Their own config file (e.g., `.claude/fundraising.local.md`)
+2. `.claude/metrics.local.md` (if it exists)
+3. Ask the user directly (if no config found)
 
 ## Benchmarks Included
 

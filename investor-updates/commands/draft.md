@@ -16,14 +16,18 @@ If no format specified, ask the user which format they prefer.
 
 ## Context Gathering
 
-1. Check for company configuration at `.claude/board-prep.local.md`
+1. Check for company configuration in this order (use first one found):
+   - `.claude/investor-updates.local.md` (plugin's own config)
+   - `.claude/board-prep.local.md` (if using board-prep plugin)
+   - `.claude/metrics.local.md` (if using metrics plugin)
+
 2. If configuration exists, read it to get:
    - Company name and stage
    - Investor/board member list
    - Key metrics to track
    - Previous update context
 
-3. If no configuration or key info missing, ask for:
+3. If no configuration exists or key info missing, ask for:
    - Company name
    - Current month/period for the update
    - Key highlights (wins, milestones)

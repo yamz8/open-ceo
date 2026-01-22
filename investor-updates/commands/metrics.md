@@ -11,7 +11,10 @@ Create a lightweight metrics summary that gives investors a quick pulse on busin
 
 ## Context Gathering
 
-1. Check for company configuration at `.claude/board-prep.local.md`
+1. Check for company configuration in this order (use first one found):
+   - `.claude/investor-updates.local.md` (plugin's own config)
+   - `.claude/metrics.local.md` (if using metrics plugin)
+   - `.claude/board-prep.local.md` (if using board-prep plugin)
 2. Look for any existing metrics data in the project
 3. Ask user for current metrics if not available
 
